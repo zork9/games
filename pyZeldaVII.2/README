@@ -1,0 +1,16 @@
+
+
+Running
+
+load main.py in python (works on windows and linux, BSD, needs pygame library
+http://pygame.org
+
+Keyboard controls :
+
+arrows : movement
+
+Map making :
+
+. You can load mapfiles by putting them in the loadmap procedure of tileroom.py
+ You can make them with pyLevelMaker : 
+ http://github.com/zork9/pygame-pyLevelMaker
