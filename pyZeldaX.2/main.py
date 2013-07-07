@@ -17,7 +17,7 @@
 import pygame
 from pygame.locals import *
 from playerlink import *
-from tileroom import *
+from tileroom1 import *
 
 class Game:
 	"Main function"
@@ -48,7 +48,7 @@ class Game:
 
 	def mainloop(self): 
 		blankimage = pygame.image.load('./pics/blank.bmp').convert()
-		self.room = Tileroom(0,0,0,0)
+		self.room = Tileroom1(0,0,0,0)
 
 		terminate = 0
 		while terminate == 0:
