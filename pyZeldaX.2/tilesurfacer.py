@@ -54,9 +54,9 @@ class TileSurfacer(TileSurfacerBase):
 			k = 0
 			l = 0
 			surfacepxarray = pygame.PixelArray(pygame.Surface((self.tilew,self.tileh))) 
-			for i in range(0+yoff,self.tileh+yoff):
+			for i in range(0+yoff,self.tileh+yoff-1):
 				k = 0
-				for j in range(xoff+0,xoff+self.tilew):
+				for j in range(xoff+0,xoff+self.tilew-1):
 					surfacepxarray[k,l] = pxarray[j,i]
 					k += 1
 				l += 1
