@@ -17,7 +17,7 @@
 import pygame
 from pygame.locals import *
 
-class Tileroom:
+class LeftToRightTileroom:
     "Room with a tile map"
     def __init__(self,xx,yy,relx,rely):
         # left NOTE : boxes collide so put them after enemies !
