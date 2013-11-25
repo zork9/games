@@ -64,6 +64,7 @@ class Tileroom:
 	if abs(self.x - player.x) < player.CENTERX:
 		return 0
 	if abs(self.MAPWIDTH + self.x) < self.SCREENWIDTH:
+		self.x += 5
 		return 0
 	else:
 		return 1
