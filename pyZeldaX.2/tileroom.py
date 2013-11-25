@@ -61,11 +61,13 @@ class Tileroom:
 
 
     def checktoupdate(self, player):
-	if self.x >= 0:
-		if player.x < player.CENTERX+5:
-			return 0
-	if player.x >= player.CENTERX-5:
-		return 1 
+	if abs(self.x - player.x) < player.CENTERX:
+		return 0
+	if abs(self.MAPWIDTH + self.x) < player.CENTERX:
+		return 0
+	else:
+		return 1
+
 
     def isroomdownexit(self):
 	###if self.relativex  < -100:
