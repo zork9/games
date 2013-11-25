@@ -58,13 +58,13 @@ class Game:
 					terminate = 1
 				if event.type == KEYDOWN or event.type == pygame.MOUSEBUTTONUP:
                     			if event.key == K_DOWN:
-						self.player.movedown()	
+						self.player.movedown(self.room)	
                     			elif event.key == K_UP:
-						self.player.moveup()	
+						self.player.moveup(self.room)	
                     			elif event.key == K_LEFT:
-						self.player.moveleft()	
+						self.player.moveleft(self.room)	
                     			elif event.key == K_RIGHT:
-						self.player.moveright()
+						self.player.moveright(self.room)
 				elif event.type == KEYUP:
 					self.player.stopmove()
 

@@ -30,6 +30,8 @@ class Tileroom:
 
 	self.tile2 = pygame.image.load('./pics/tile2-grass-1-16x16.bmp').convert()
 
+	self.SCREENWIDTH = 640 
+	self.SCREENHEIGHT = 480
 	self.MAPWIDTH = 768 
 	self.MAPHEIGHT = 1024 
 	self.TILEWIDTH = 16 
@@ -38,6 +40,10 @@ class Tileroom:
 	self.tilelist = []
 
 	self.loadmap()
+
+    def moveupdate(self, dx, dy):
+	self.x += dx
+	self.y += dy
 
     def draw(self,screen):###player
 	###self.update(screen,player)
@@ -52,6 +58,14 @@ class Tileroom:
 
     def update(self, screen, player):
 	1
+
+
+    def checktoupdate(self, player):
+	if self.x >= 0:
+		if player.x < player.CENTERX+5:
+			return 0
+	if player.x >= player.CENTERX-5:
+		return 1 
 
     def isroomdownexit(self):
 	###if self.relativex  < -100:

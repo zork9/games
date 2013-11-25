@@ -24,7 +24,10 @@ class PlayerLink:
     def __init__(self):
 	###self.lifemeter = lifemeter
 
-        self.x = 280 
+	self.CENTERX = 280
+	self.CENTERY = 300
+
+        self.x = 281 
         self.y = 300 
         self.w = 48 
         self.h = 48 
@@ -97,21 +100,33 @@ class PlayerLink:
     def stopmove(self):
 	self.direction = "stop"
 
-    def moveleft(self):
+    def moveleft(self,room):
 	self.direction = "west"
-	self.moveupdate(-5,0)	
+	if not room.checktoupdate(self):
+		self.moveupdate(-5,0)	
+	else:	
+		room.moveupdate(+5,0)	
 
-    def moveright(self):
+    def moveright(self,room):
 	self.direction = "east"
-	self.moveupdate(+5,0)	
+	if not room.checktoupdate(self):
+		self.moveupdate(+5,0)	
+	else:	
+		room.moveupdate(-5,0)	
 
-    def moveup(self):
+    def moveup(self,room):
 	self.direction = "north"
-	self.moveupdate(0,-5)	
+	if not room.checktoupdate(self):
+		self.moveupdate(0,-5)	
+	else:	
+		room.moveupdate(0,+5)	
 
-    def movedown(self):
+    def movedown(self,room):
 	self.direction = "south"
-	self.moveupdate(0,+5)	
+	if not room.checktoupdate(self):
+		self.moveupdate(0,+5)	
+	else:	
+		room.moveupdate(0,-5)	
 
     def drawstatic(self, screen):
 	self.stimlibdown.drawstatic(screen,self.x,self.y,0)
