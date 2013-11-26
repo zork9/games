@@ -25,7 +25,7 @@ class PlayerLink:
 	###self.lifemeter = lifemeter
 
 	self.CENTERX = 280
-	self.CENTERY = 300
+	self.CENTERY = 200
 
         self.x = 281 
         self.y = 300 

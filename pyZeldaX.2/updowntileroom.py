@@ -17,7 +17,7 @@
 import pygame
 from pygame.locals import *
 
-class Tileroom:
+class LeftToRightTileroom:
     "Room with a tile map"
     def __init__(self,xx,yy,relx,rely):
         # left NOTE : boxes collide so put them after enemies !
@@ -61,21 +61,6 @@ class Tileroom:
 
 
     def checktoupdate(self, player):
-	return self.checktoupdatex(player) or self.checktoupdatey(player)
-
-    def checktoupdatex(self, player):
-	if abs(self.x - player.x) < player.CENTERX:
-		return 0
-	elif abs(self.MAPWIDTH + self.x) < self.SCREENWIDTH:
-		###player.x -= 5
-		if player.x > player.CENTERX:
-			return 0
-		elif player.x <= player.CENTERX:
-			return 1
-	else:
-		return 1
-
-    def checktoupdatey(self, player):
 	if abs(self.y - player.y) < player.CENTERY:
 		return 0
 	elif abs(self.MAPHEIGHT + self.y) < self.SCREENHEIGHT:
@@ -86,6 +71,7 @@ class Tileroom:
 			return 1
 	else:
 		return 1
+
 
     def isroomdownexit(self):
 	###if self.relativex  < -100:
